@@ -1,0 +1,98 @@
+mat-sidenav-container {
+    background-color: white;
+}
+
+mat-sidenav {
+    width: 15.69vw;
+    border: none;
+    transition: all 0.125s;
+}
+
+mat-sidenav.collapsed {
+    width: 5.07vw;
+}
+
+.logo {
+    margin: 2.83vh 2.85vw 8.28vh 3.54vw;
+}
+
+.logo img {
+    height: 3.4vh;
+    width: 9.31vw;
+}
+
+a {
+    font-family: "Nunito";
+    color: blue;
+    font-size: 1.6rem;
+    font-weight: 600;
+    height: 5.22vh;
+    line-height: 1.4rem;
+    text-decoration: none;
+    transition: all 0.125s;
+    margin-bottom: 1.81vh;
+    filter: invert(1) brightness(2);
+}
+
+mat-action-list.collapsed {
+    margin-left: 0.69vw;
+}
+
+.mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+    display: inline;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+mat-action-list {
+    transition: all 0.125s;
+    padding-top: 2.38vh;
+    margin-left: 1.11vw;
+}
+
+activa-header {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 17.92vw;
+    right: 0;
+    width: auto;
+    height: auto;
+}
+
+div.router-container {
+    position: fixed;
+    top: 8.51vh;
+    bottom: 0;
+    left: 15.69vw;
+    right: 0;
+    width: auto;
+    height: auto;
+    overflow: scroll;
+    background-color: #E8EAF6;
+    padding: 0 2rem 3.4rem 2rem;
+    transition: all 0.125s;
+}
+
+div.router-container.collapsed {
+    left: 5.07vw;
+}
+
+div.router-container::-webkit-scrollbar {
+    display: none;
+}
+
+div.overlapped-container {
+    position: fixed;
+    top: 9.07vh;
+    bottom: 0;
+    left: 17.92vw;
+    right: 0;
+    height: auto;
+    width: 80vw;
+    overflow: scroll;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    background-color: white;
+    box-shadow: 0 6px 12px 0 rgba(105,132,170,0.38);
+    transition: all 0.125s;
+}

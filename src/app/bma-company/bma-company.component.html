@@ -1,32 +1,375 @@
-<div>
-    <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-hint>Hint</mat-hint>
-    </mat-form-field>
+ <div style="margin-top: 20px;">
+    <mat-vertical-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="applicantForm" [editable]="isEditable">
+          <form [formGroup]="applicantForm">
+            <ng-template matStepLabel>Applicant Information</ng-template>
+            <div class="mat-tab-body-content">
+                <mat-form-field appearance="outline">
+                    <mat-label>Social ID</mat-label>
+                    <input matInput placeholder="Social ID" formControlName="social">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>First</mat-label>
+                    <input matInput placeholder="First Name" formControlName="first">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Last Name" formControlName="lastName">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dateBirth">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Email" formControlName="email">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput placeholder="Phone Number" formControlName="phone">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Address</mat-label>
+                    <input matInput placeholder="Address" formControlName="address">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>State</mat-label>
+                    <input matInput placeholder="State" formControlName="state">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>City</mat-label>
+                    <input matInput placeholder="city" formControlName="city">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>ZIP</mat-label>
+                    <input matInput placeholder="zip" formControlName="zip">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Apartment</mat-label>
+                    <input matInput placeholder="apartment" formControlName="apartment">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Date Available</mat-label>
+                    <input matInput [matDatepicker]="pickerAv" formControlName="dateAvailable">
+                    <mat-datepicker-toggle matSuffix [for]="pickerAv"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerAv></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Position</mat-label>
+                    <input matInput placeholder="position" formControlName="position" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="educationForm" [editable]="isEditable">
+          <form [formGroup]="educationForm">
+            <ng-template matStepLabel>Education</ng-template>
+            <div class="mat-tab-body-content">
+                <div>
+                    <h2>College</h2>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Address</mat-label>
+                            <input matInput placeholder="Address" formControlName="addressCollege">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Date Start</mat-label>
+                            <input matInput [matDatepicker]="pickerFromC" formControlName="dateStartCollege">
+                            <mat-datepicker-toggle matSuffix [for]="pickerFromC"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerFromC></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Date End</mat-label>
+                            <input matInput [matDatepicker]="pickerToC" formControlName="dateEndCollege">
+                            <mat-datepicker-toggle matSuffix [for]="pickerToC"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerToHs></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Validation</mat-label>
+                            <mat-select>
+                            <mat-option value="true">True</mat-option>
+                            <mat-option value="false">False</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Degree</mat-label>
+                            <input matInput placeholder="position" formControlName="degreeCollege">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div>
+                    <h2>Hight School</h2>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Address</mat-label>
+                        <input matInput placeholder="Address" formControlName="addressHightSchool">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date Start</mat-label>
+                        <input matInput [matDatepicker]="pickerFromHs" formControlName="dateStartHightSchool">
+                        <mat-datepicker-toggle matSuffix [for]="pickerFromHs"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerFromHs></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date End</mat-label>
+                        <input matInput [matDatepicker]="pickerToHs" formControlName="dateEndHightSchool">
+                        <mat-datepicker-toggle matSuffix [for]="pickerToHs"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerToHs></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Validation</mat-label>
+                        <mat-select>
+                        <mat-option value="true">True</mat-option>
+                        <mat-option value="false">False</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Degree</mat-label>
+                        <input matInput placeholder="position" formControlName="degreeHightSchool">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <h2>Other</h2>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Address</mat-label>
+                        <input matInput placeholder="Address" formControlName="addressOther">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date Start</mat-label>
+                        <input matInput [matDatepicker]="pickerFromO" formControlName="dateStartOther">
+                        <mat-datepicker-toggle matSuffix [for]="pickerFromO"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerFromO></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date End</mat-label>
+                        <input matInput [matDatepicker]="pickerToO" formControlName="dateEndOther">
+                        <mat-datepicker-toggle matSuffix [for]="pickerToO"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerToO></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Validation</mat-label>
+                        <mat-select>
+                        <mat-option value="true">True</mat-option>
+                        <mat-option value="false">False</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Degree</mat-label>
+                        <input matInput placeholder="position" formControlName="degreeOther">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="employmentForm" [editable]="isEditable">
+            <ng-template matStepLabel>Employment</ng-template>
+            <form [formGroup]="employmentForm">
+                <ng-template matStepLabel>Education</ng-template>
+                <div class="mat-tab-body-content">
+                    <div>
+                        <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Address</mat-label>
+                                <input matInput placeholder="Address" formControlName="address">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Company</mat-label>
+                                <input matInput placeholder="Company" formControlName="company">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Starting salary</mat-label>
+                                <input matInput placeholder="Starting salary" formControlName="startingSalary">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Ending salary</mat-label>
+                                <input matInput placeholder="Ending salary" formControlName="endingSalary">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>From</mat-label>
+                                <input matInput placeholder="From" formControlName="from">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>To</mat-label>
+                                <input matInput placeholder="To" formControlName="to">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Job</mat-label>
+                                <input matInput placeholder="Job" formControlName="job">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Phone</mat-label>
+                                <input matInput placeholder="Phone" formControlName="phone">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Reason Leaving</mat-label>
+                                <input matInput placeholder="Reason Leaving" formControlName="reasonLeaving">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Reference Validation</mat-label>
+                                <input matInput placeholder="Reference Validation" formControlName="referenceValidation">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Responsabilities</mat-label>
+                                <input matInput placeholder="Responsabilities" formControlName="responsabilities">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Supervisor</mat-label>
+                                <input matInput placeholder="Supervisor" formControlName="supervisor">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+        </mat-step>
+        <mat-step [stepControl]="militaryForm" [editable]="isEditable">
+            <ng-template matStepLabel>Military service</ng-template>
+            <form [formGroup]="militaryForm">
+                <ng-template matStepLabel>Education</ng-template>
+                <div class="mat-tab-body-content">
+                    <div>
+                        <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Branch</mat-label>
+                                <input matInput placeholder="Branch" formControlName="branch">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Explanation</mat-label>
+                                <input matInput placeholder="Explanation" formControlName="explanation">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Rank</mat-label>
+                                <input matInput placeholder="Rank" formControlName="rank">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>From</mat-label>
+                                <input matInput placeholder="From" formControlName="from">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>To</mat-label>
+                                <input matInput placeholder="To" formControlName="to">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Type</mat-label>
+                                <input matInput placeholder="Type" formControlName="type">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+        </mat-step>
+        <mat-step [stepControl]="referencesForm" [editable]="isEditable">
+            <ng-template matStepLabel>References</ng-template>
+            <form [formGroup]="refencesForm">
+                <div class="mat-tab-body-content">
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Company</mat-label>
+                            <input matInput placeholder="Company" formControlName="company">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Name" formControlName="name">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Phone</mat-label>
+                            <input matInput placeholder="Phone" formControlName="phone">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline"z>
+                            <mat-label>Relationship</mat-label>
+                            <input matInput placeholder="Relationship" formControlName="relationship">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="referencesForm" [editable]="isEditable">
+            <ng-template matStepLabel>Disclairmer and signature</ng-template>
+            <form [formGroup]="refencesForm">
+                <div class="mat-tab-body-content">
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Company</mat-label>
+                            <input matInput placeholder="Company" formControlName="company">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Name" formControlName="name">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Phone</mat-label>
+                            <input matInput placeholder="Phone" formControlName="phone">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline"z>
+                            <mat-label>Relationship</mat-label>
+                            <input matInput placeholder="Relationship" formControlName="relationship">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="referencesForm" [editable]="isEditable">
+            <ng-template matStepLabel>Disclairmer and signature</ng-template>
+            <form [formGroup]="refencesForm">
+                <div class="mat-tab-body-content">
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Company</mat-label>
+                            <input matInput placeholder="Company" formControlName="company">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Name" formControlName="name">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Phone</mat-label>
+                            <input matInput placeholder="Phone" formControlName="phone">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline"z>
+                            <mat-label>Relationship</mat-label>
+                            <input matInput placeholder="Relationship" formControlName="relationship">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          <p>You are now done.</p>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+        </mat-step>
+    </mat-vertical-stepper>
+    <div *ngIf="userInfo != undefined">
+       
+    </div>
 </div>

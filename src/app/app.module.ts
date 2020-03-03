@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { BmaCompanyModule } from './bma-company/bma-company.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BmaCompanyService } from './services/bma-company.service';
 
 @NgModule({
   declarations: [
@@ -15,9 +17,13 @@ import { BmaCompanyModule } from './bma-company/bma-company.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BmaCompanyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

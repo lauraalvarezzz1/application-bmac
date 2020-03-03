@@ -1,0 +1,29 @@
+<mat-sidenav-container autosize>
+    <mat-sidenav style="overflow: visible; z-index: 1;" class="sideMenu"
+    [ngClass]="isCollapsed ? 'collapsed' : ''" [fixedInViewport]="true" [mode]="sideNavMode"
+            position="start" role="directory" [opened]="true" #sidenav>
+            <div class="logo">
+                <img class="logo__brand" src="../../assets/bmc-logo.png" alt="bma">
+            </div>
+            <mat-action-list [ngClass]="isCollapsed ? 'collapsed' : ''">
+                <a mat-list-item routerLink="bam-company-list" (click)="isSmallScreen ? sidenav.close() : null"
+                    routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+                    <span>CV List</span>
+                </a>
+                <a mat-list-item routerLink="bma-company" (click)="isSmallScreen ? sidenav.close() : null" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: false}">
+                    <span>Add new CV</span>
+                </a>
+                <a mat-list-item routerLink="users" (click)="isSmallScreen ? sidenav.close() : null"
+                    routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+                    <span>Otros</span>
+                </a>
+            </mat-action-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+                <app-header></app-header>
+                <div class="router-container">
+                    <router-outlet></router-outlet>
+                </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>

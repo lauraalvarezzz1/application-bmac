@@ -1,0 +1,19 @@
+.mat-tab-body-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.mat-tab-body-content {
+    padding-top: 20px;
+}
+
+.mat-form-field {
+    width: 30%;
+    margin-right: 10px;
+}
+
+.button-container {
+    margin: 20px;
+    text-align: center;
+}
